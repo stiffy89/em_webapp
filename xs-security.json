@@ -2,6 +2,21 @@
   "xsappname": "emwebapp",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
-  "scopes": [],
-  "role-templates": []
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.emmessenger"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "EventMessengerRole",
+      "scope-references": ["$XSAPPNAME.emmessenger"]
+    }
+  ],
+  "role-collections":[
+    {
+      "name": "EventMessengerRoleCollection",
+      "role-template-references": [ "$XSAPPNAME.EventMessengerRole" ]
+    }
+  ]
 }
