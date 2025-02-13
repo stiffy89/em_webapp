@@ -1,7 +1,62 @@
 <mvc:View controllerName="emwebapp.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        
+        <content>
+            <l:FixFlex id='fixFlex' fixContentSize='85%'>
+                <l:fixContent>
+                <ScrollContainer id='scrollContainer' vertical='true'>
+                    <l:Grid 
+                        id='grid' 
+                        content= "{path: '/messages', factory: '.createMessage'}"
+                        defaultSpan="XL12 L12 M12 S12"
+                        class="sapUiMediumMargin"
+                    >
+                    </l:Grid>
+                </ScrollContainer>
+                </l:fixContent>
+                <l:flexContent>
+                    <l:Grid
+                        id='inputGridContainer'
+                        defaultSpan="XL12 L12 M12 S12"
+                        class="sapUiMediumMargin"
+                    >
+                        <FlexBox 
+                            id='typingIndicatorFlexBox'
+                            visible="{path: '/typing/isTyping'}"
+                        >
+                            <items>
+                                 <core:HTML
+                                    content="&lt;div class='ticontainer sapUiTinyMarginEnd'&gt;&lt;div class='tiblock'&gt;&lt;div class='tidot'&gt;&lt;/div&gt;&lt;div class='tidot'&gt;&lt;/div&gt;&lt;div class='tidot'&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
+                                />
+                                <Text
+                                    id='typingIndicatorPerson'
+                                    text="{path: '/typing/whoIsTyping'}"
+                                />
+                            </items>
+                        </FlexBox>
+                        <Input
+                            id='input'
+                            width='100%'
+                            liveChange='onLiveChange'
+                        >
+                            <layoutData>
+                                <l:GridData span="XL11 L11 M11 S11"/>
+                            </layoutData>   
+                        </Input>
+                        <Button
+                            text="Submit"
+                            press="onSendMessage"
+                        >
+                            <layoutData>
+                                <l:GridData span="XL1 L1 M1 S1"/>
+                            </layoutData>
+                        </Button>
+                    </l:Grid>
+                </l:flexContent>
+            </l:FixFlex>
+        </content>
     </Page>
 </mvc:View>
