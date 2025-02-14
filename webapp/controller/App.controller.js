@@ -5,6 +5,7 @@ sap.ui.define([
 
   return BaseController.extend("emwebapp.controller.App", {
       onInit() {
+        
       }
   });
 });
