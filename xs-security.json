@@ -18,5 +18,8 @@
       "name": "EventMessengerRoleCollection",
       "role-template-references": [ "$XSAPPNAME.EventMessengerRole" ]
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "token-validity": 60
+  }
 }

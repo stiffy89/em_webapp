@@ -7,7 +7,9 @@
   float: inline-end;
 }
 
-.imessage p{
+.imessage p {
+  margin-top: 0px;
+  margin-bottom: 12px;
   border-radius: 1.15rem;
   line-height: 1.25;
   max-width: 100%;
@@ -111,5 +113,19 @@ p small {
 }
 .tidot:nth-child(3){
 -webkit-animation-delay:400ms;
+}
+
+.inputGridContainer {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(244, 246, 248);
+  border-radius: 10px;
+}
+
+.typingIndicator {
+  opacity: 0;
+}
+
+.typingIndicator.visible {
+  opacity: 1;
 }
 

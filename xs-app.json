@@ -8,6 +8,19 @@
       "service": "sap-approuter-userapi"
     },
     {
+      "source": "^.*/messagingrest/v1/queues/(.*)$",
+      "target": "/messagingrest/v1/queues/$1",
+      "authenticationType": "none",
+      "destination": "enterprise_messaging"
+    },
+    {
+      "source": "^.*/sap/opu/odata/iwbep/GWSAMPLE_BASIC/(.*)$",
+      "target": "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$1",
+      "authenticationType": "xsuaa",
+      "destination": "ES5",
+      "csrfProtection": false
+    },
+    {
       "source": "^/resources/(.*)$",
       "target": "/resources/$1",
       "authenticationType": "none",
